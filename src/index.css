@@ -1,0 +1,72 @@
+/* === GLOBAL STYLES ======================================= */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #1f2937; /* neutral text */
+  background-color: #f3f4f6; /* gray-100 */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Center whole app */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f3f4f6;
+}
+
+/* Links */
+a { color: #2563eb; text-decoration: none; }
+a:hover { color: #1e40af; }
+
+/* Buttons default look (Tailwind still overrides where used) */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #e5e7eb; /* gray-200 */
+  cursor: pointer;
+  transition: all .25s ease;
+}
+button:hover { background:#d1d5db; }
+
+/* Headings */
+h1 { line-height: 1.15; }
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in    { animation: fadeIn .5s ease-out both; }
+.slide-up   { animation: slideUp .6s ease-out both; }
+.stagger > * { opacity: 0; transform: translateY(10px); }
+.stagger > * { animation: slideUp .5s ease-out both; }
+.stagger > *:nth-child(1){ animation-delay: .05s; }
+.stagger > *:nth-child(2){ animation-delay: .10s; }
+.stagger > *:nth-child(3){ animation-delay: .15s; }
+.stagger > *:nth-child(4){ animation-delay: .20s; }
+.stagger > *:nth-child(5){ animation-delay: .25s; }
+.stagger > *:nth-child(6){ animation-delay: .30s; }
+
+/* Lightbox prevents scroll-jump on mobile when open */
+body.modal-open { overflow: hidden; }
+
+/* Small screens readability */
+@media (max-width: 640px) {
+  :root { line-height: 1.7; }
+}
