@@ -6,7 +6,7 @@ export default function App() {
 
   const car = {
     title: "Škoda Octavia Combi RS 2.0 TDI DSG (2014)",
-    priceEUR: 13000,
+    priceEUR: 11900,
     negotiable: true,
     location: "São Martinho, Madeira",
     features: [
